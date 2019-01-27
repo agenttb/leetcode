@@ -8,18 +8,18 @@ import java.util.List;
 public class InorderSolution {
     public List<Integer> inorderTraversal(BinaryTreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
-        inorderTraversal(root, output);
+        inorder(root, output);
         return output;
     }
 
-    private void inorderTraversal(BinaryTreeNode root, List<Integer> output) {
+    private void inorder(BinaryTreeNode root, List<Integer> output) {
         if (root == null) {
             return;
         }
 
-        inorderTraversal(root.left, output);
+        inorder(root.left, output);
         output.add(root.val);
-        inorderTraversal(root.right, output);
+        inorder(root.right, output);
     }
 
 }

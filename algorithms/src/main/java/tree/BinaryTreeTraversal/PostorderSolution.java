@@ -8,16 +8,16 @@ import java.util.List;
 public class PostorderSolution {
     public List<Integer> postorderTraversal(BinaryTreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
-        postorderTraversal(root, output);
+        postorder(root, output);
         return output;
     }
 
-    private void postorderTraversal(BinaryTreeNode root, List<Integer> output) {
+    private void postorder(BinaryTreeNode root, List<Integer> output) {
         if (root == null) {
             return;
         }
-        postorderTraversal(root.left, output);
-        postorderTraversal(root.right, output);
+        postorder(root.left, output);
+        postorder(root.right, output);
         output.add(root.val);
     }
 }
