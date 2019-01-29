@@ -26,22 +26,31 @@ public class BST<T>  {
     }
 
 
-    public void delete(BSTNode root, BSTNode node) {
-        //case1: Left or right is null
-        if (node.left == null) {
-            node = node.right;
-        } else if (node.right == null) {
-            node = node.left;
-        } else {
-            // case2: node`s
-            if (node.right.left == null) {
-                BSTNode tmpNode = node.left;
-                node = node.right;
-                node.left  = tmpNode;
-            } else {
+    public void delete(BSTNode<T> root, T x) {
+        this.root = doDeleteRec(root, x);
+    }
 
+    private BSTNode<T> doDeleteRec(BSTNode<T> root, T x) {
+        if (root == null) {
+            return null;
+        }
+        int cmp = comparator.compare(x, root.val);
+        if (cmp < 0) {
+            root.left = doDeleteRec(root.left, x);
+        } else if (cmp > 0) {
+            root.right = doDeleteRec(root.right, x);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            } else {
+                BSTNode<T> minimum = treeMinimum(root.right);
+                root.val = minimum.val;
+                root.right = doDeleteRec(root.right, root.val);
             }
         }
+        return root;
     }
 
     public  BSTNode<T> treeSearch(BSTNode<T> t, T x) {
@@ -58,20 +67,20 @@ public class BST<T>  {
 
     public BSTNode<T> treeMinimum(BSTNode<T> t) {
         if (t == null) {
-            return t;
+            return null;
         }
         if (t.left != null) {
-            treeMinimum(t.left);
+            return treeMinimum(t.left);
         }
         return t;
     }
 
     public BSTNode<T> treeMaximum(BSTNode<T> t) {
         if (t == null) {
-            return t;
+            return null;
         }
         if (t.right != null) {
-            treeMaximum(t.right);
+            return treeMaximum(t.right);
         }
         return t;
     }
