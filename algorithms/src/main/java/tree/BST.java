@@ -1,8 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class BST<T>  {
     private BSTNode<T> root;
@@ -143,5 +141,28 @@ public class BST<T>  {
         output.add(root.val);
         preOrder(root.left, output);
         preOrder(root.right, output);
+    }
+
+
+    public List<T> levelTraversal(BSTNode<T> root) {
+        if (root == null) {
+            return null;
+        }
+        List<T> output = new ArrayList<>();
+        Queue<BSTNode<T>> queue = new ArrayDeque<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            BSTNode<T> node = queue.poll();
+            if (node != null) {
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+                output.add(node.val);
+            }
+        }
+        return output;
     }
 }

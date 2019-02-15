@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 import tree.BinaryTreeTraversal.InorderSolution;
-import tree.BinaryTreeNode;
+import tree.TreeNode;
 import tree.BinaryTreeTraversal.PostorderSolution;
 import tree.BinaryTreeTraversal.PreorderSolution;
 import tree.BinaryTreeUtils;
@@ -20,7 +20,7 @@ public class BinaryTreeTraversalTest {
     @Test
     public void testInorderTraversal() {
         List<Integer> input1 = Arrays.asList(new Integer[]{1, null, 2, 3});
-        BinaryTreeNode root = BinaryTreeUtils.createInorderTree(input1);
+        TreeNode root = BinaryTreeUtils.createInorderTree(input1);
         List<Integer> output1 = solution.inorderTraversal(root);
         Integer[] actuals = new Integer[3];
         Assert.assertArrayEquals(new Integer[] {1,3,2}, output1.toArray(actuals));
@@ -29,7 +29,7 @@ public class BinaryTreeTraversalTest {
     @Test
     public void testPreorderTraversal() {
         List<Integer> input1 = Arrays.asList(new Integer[]{1, null, 2, 3});
-        BinaryTreeNode root = BinaryTreeUtils.createInorderTree(input1);
+        TreeNode root = BinaryTreeUtils.createInorderTree(input1);
         List<Integer> output1 = preorderSolution.preorderTraversal(root);
         Integer[] actuals = new Integer[3];
         Assert.assertArrayEquals(new Integer[] {1,2,3}, output1.toArray(actuals));
@@ -38,7 +38,7 @@ public class BinaryTreeTraversalTest {
     @Test
     public void tsetPostorderTraversal() {
         List<Integer> input1 = Arrays.asList(new Integer[]{1, null, 2, 3});
-        BinaryTreeNode root = BinaryTreeUtils.createInorderTree(input1);
+        TreeNode root = BinaryTreeUtils.createInorderTree(input1);
         List<Integer> output1 = postorderSolution.postorderTraversal(root);
         Integer[] actuals = new Integer[3];
         Assert.assertArrayEquals(new Integer[] {3, 2, 1}, output1.toArray(actuals));

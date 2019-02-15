@@ -1,18 +1,18 @@
 package tree.BinaryTreeTraversal;
 
-import tree.BinaryTreeNode;
+import tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class InorderSolution {
-    public List<Integer> inorderTraversal(BinaryTreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
         inorder(root, output);
         return output;
     }
 
-    private void inorder(BinaryTreeNode root, List<Integer> output) {
+    private void inorder(TreeNode root, List<Integer> output) {
         if (root == null) {
             return;
         }

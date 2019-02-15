@@ -1,18 +1,18 @@
 package tree.BinaryTreeTraversal;
 
-import tree.BinaryTreeNode;
+import tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PostorderSolution {
-    public List<Integer> postorderTraversal(BinaryTreeNode root) {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> output = new ArrayList<Integer>();
         postorder(root, output);
         return output;
     }
 
-    private void postorder(BinaryTreeNode root, List<Integer> output) {
+    private void postorder(TreeNode root, List<Integer> output) {
         if (root == null) {
             return;
         }

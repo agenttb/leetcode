@@ -53,4 +53,12 @@ public class BSTTest extends BSTBaseTest{
 
     }
 
+    @Test
+    public void testLevelTraversalBST() {
+        BST<Integer> bst = createBST();
+        List<Integer> integers = bst.levelTraversal(bst.getRoot());
+        System.out.println(integers.toString());
+
+    }
+
 }

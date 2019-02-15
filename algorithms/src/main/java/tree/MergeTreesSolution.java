@@ -1,10 +1,8 @@
 package tree;
 
-import tree.BinaryTreeNode;
-
 public class MergeTreesSolution {
 
-    public BinaryTreeNode mergeTrees(BinaryTreeNode t1, BinaryTreeNode t2) {
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
         if (t1 == null) {
             return t2;
         }
