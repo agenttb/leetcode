@@ -61,4 +61,20 @@ public class BSTTest extends BSTBaseTest{
 
     }
 
+    @Test
+    public void testNOTOperation() {
+        int cap = 50;
+        int n = cap - 1;
+        n |= n >>> 1;
+        System.out.println(n);
+        n |= n >>> 2;
+        System.out.println(n);
+        n |= n >>> 4;
+        System.out.println(n);
+        n |= n >>> 8;
+        System.out.println(n);
+        n |= n >>> 16;
+        System.out.println(n);
+    }
+
 }
