@@ -14,5 +14,4 @@ public class BinaryTreeMaximumPathSum {
         return maxValue > (leftVal + rightVal + root.val) ? maxValue : leftVal + rightVal + root.val;
     }
 
-
 }
